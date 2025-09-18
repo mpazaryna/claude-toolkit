@@ -23,20 +23,20 @@ git clone https://github.com/[username]/claude-toolkit.git
 2. Copy the desired files into your project:
 ```bash
 # Copy specific agents
-cp claude-toolkit/agents/quality-control-enforcer.md your-project/
+cp claude-toolkit/agents/quality-control-enforcer.md your-project/.claude
 
 # Copy commands
-cp -r claude-toolkit/commands/paz your-project/
+cp -r claude-toolkit/commands/paz your-project/.claude
 
 # Copy templates
-cp claude-toolkit/templates/paz/acb/typescript.md your-project/
+cp claude-toolkit/templates/paz/acb/typescript.md your-project/.claude
 ```
 
 3. Reference the files in your Claude Code sessions as needed
 
 ## Components
 
-### 🤖 Agents
+### Agents
 
 Specialized AI agents with specific roles and behaviors:
 
@@ -46,7 +46,7 @@ Specialized AI agents with specific roles and behaviors:
 | `research-docs-fetcher` | Fetches and organizes web documentation into structured markdown files |
 | `work-completion-summarizer` | Summarizes completed work with clear documentation |
 
-### 📋 Commands
+### Commands
 
 Pre-configured workflows for common tasks. Commands are organized under the `paz/` namespace to allow for easy identification and to prevent conflicts when multiple toolkit collections are used together:
 
@@ -64,7 +64,7 @@ Pre-configured workflows for common tasks. Commands are organized under the `paz
 #### Tool Documentation (`commands/paz/tools/`)
 - `playwright.md` - Playwright testing guidance
 
-### 📄 Templates
+### Templates
 
 Comprehensive analysis structures for different project types. Like commands, templates are namespaced under `paz/` to facilitate organization and allow multiple toolkit collections to coexist:
 
@@ -135,13 +135,21 @@ claude-toolkit/
 - **Technology-Specific**: Tailored templates for different stacks
 - **Workflow Integration**: Designed to enhance developer workflows
 
-## Contributing
+## Usage Philosophy
 
-Contributions are welcome! Please feel free to submit issues or pull requests with:
-- New agents for specialized tasks
-- Commands for common workflows
-- Templates for additional technology stacks
-- Improvements to existing configurations
+This is a personal toolkit optimized for my specific workflows and development practices. While shared publicly for transparency and inspiration, it's not designed as a community project.
+
+**Feel free to:**
+- Fork and adapt any components for your own use
+- Take individual files that solve your specific needs
+- Use this as inspiration for building your own toolkit collection
+- Run these tools alongside other collections like CCPlugins or ContextKit
+
+**Please note:**
+- This repository reflects my personal development preferences and workflows
+- Pull requests are not accepted as this is maintained for personal use
+- The structure and content may change based on my evolving needs
+- Consider creating your own namespaced collection for your specific requirements
 
 ## Inspired By
 
@@ -153,10 +161,6 @@ An AI development workflow system that transforms Claude Code from a reactive to
 
 ### [IndyDevDan](https://www.youtube.com/@indydevdan)
 A pioneering voice in the AI-assisted development community who pushes the boundaries of advanced context understanding and agentic programming. Through his YouTube channel, IndyDevDan demonstrates innovative techniques for leveraging Claude Code and other AI tools to create sophisticated development workflows. His work focuses on maximizing AI comprehension of complex codebases and enabling truly autonomous programming agents. This toolkit incorporates principles from his explorations in structured context management and agent-based development patterns.
-
-## License
-
-[Specify your license here]
 
 ## Acknowledgments
 
