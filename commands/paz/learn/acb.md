@@ -50,6 +50,8 @@ For each detected technology, read the corresponding template file:
 - TypeScript → `.claude/templates/paz/acb/typescript.md`
 - Jest → `.claude/templates/paz/acb/jest-testing.md`
 - iOS → `.claude/templates/paz/acb/ios-swift.md`
+- Android → `.claude/templates/paz/acb/android-kotlin.md`
+
 
 ### Step 4: Execute Comprehensive Analysis
 
@@ -110,25 +112,3 @@ Create a comprehensive `codebase_analysis.md` that includes:
 [Insights from each applied template]
 ```
 
----
-
-## Example Usage
-
-When you run this command on the compass project:
-
-1. **Detection Phase**:
-   - Finds `wrangler.jsonc` → Cloudflare Worker detected
-   - Finds `@modelcontextprotocol/sdk` in package.json → MCP Server detected
-   - Finds `jest.config.cjs` → Jest testing detected
-   - Finds `tsconfig.json` → TypeScript detected
-
-2. **Template Loading**:
-   - Read `.claude/templates/paz/acb/base.md`
-   - Read `.claude/templates/paz/acb/mcp-server.md`
-   - Read `.claude/templates/paz/acb/cloudflare-worker.md`
-   - Read `.claude/templates/paz/acb/typescript.md`
-   - Read `.claude/templates/paz/acb/jest-testing.md`
-
-3. **Merged Analysis**: Creates comprehensive analysis combining all templates
-
-This approach ensures you get the right analysis depth for each project's specific technology stack.
