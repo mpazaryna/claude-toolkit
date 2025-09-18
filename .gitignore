@@ -1,0 +1,18 @@
+# Local project index (contains personal paths)
+# Uncomment to exclude from version control
+# projects.json
+
+# Backup files
+*.tmp
+*.bak
+*~
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea
+.vscode
+*.swp
+*.swo

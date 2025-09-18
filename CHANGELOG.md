@@ -29,6 +29,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `add-agent.md` command for creating new agents
   - `add-template.md` command for creating new templates
   - `toolkit-consistency-reviewer` agent for validating toolkit structure
+- Sophisticated deployment system for managing toolkit distribution
+  - `deploy.sh` script for deploying components to projects
+  - `sync.sh` script for updating deployed components
+  - `projects.json` index for tracking project deployments
+  - Support for selective component deployment
+  - Automatic tracking of deployment status and timestamps
 
 ### Changed
 - Organized commands and templates under `paz/` namespace to support multiple toolkit collections

@@ -1,0 +1,19 @@
+{
+  "projects": [
+    {
+      "name": "example-project",
+      "path": "/Users/mpaz/workspace/example-project",
+      "claudeDir": ".claude"
+    },
+    {
+      "name": "authentic-advantage",
+      "path": "/Users/mpaz/workspace/authentic-advantage",
+      "claudeDir": ".claude"
+    },
+    {
+      "name": "chiro-page",
+      "path": "/Users/mpaz/workspace/chiro-page",
+      "claudeDir": ".claude"
+    }
+  ]
+}
