@@ -135,6 +135,27 @@ claude-toolkit/
 - **Technology-Specific**: Tailored templates for different stacks
 - **Workflow Integration**: Designed to enhance developer workflows
 
+## Toolkit Maintenance
+
+This repository includes meta-tooling in the `.claude/` directory for maintaining and extending the toolkit itself. These tools ensure consistency and streamline the process of adding new components.
+
+### Meta Commands (`.claude/commands/`)
+- `add-agent.md` - Guided workflow for creating new agents with proper structure and documentation
+- `add-template.md` - Streamlined process for adding new ACB templates following established patterns
+
+### Meta Agents (`.claude/agents/`)
+- `toolkit-consistency-reviewer` - Validates all components follow patterns, ensures documentation sync, and checks naming conventions
+
+### Using Meta Tools
+
+When working on this toolkit:
+1. Use `add-agent.md` command to create new agents with consistent structure
+2. Use `add-template.md` command to add technology-specific templates
+3. Run `toolkit-consistency-reviewer` agent before commits to ensure everything follows patterns
+4. These tools automatically update README and CHANGELOG when adding components
+
+This self-referential approach ensures the toolkit remains organized and maintainable as it grows.
+
 ## Usage Philosophy
 
 This is a personal toolkit optimized for my specific workflows and development practices. While shared publicly for transparency and inspiration, it's not designed as a community project.

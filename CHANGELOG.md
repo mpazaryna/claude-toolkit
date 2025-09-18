@@ -25,6 +25,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `CLAUDE.md` file for Claude Code guidance
 - Comprehensive README with installation instructions
 - Inspired By section crediting CCPlugins, ContextKit, and IndyDevDan
+- `.claude/` directory with meta-tooling for toolkit maintenance
+  - `add-agent.md` command for creating new agents
+  - `add-template.md` command for creating new templates
+  - `toolkit-consistency-reviewer` agent for validating toolkit structure
 
 ### Changed
 - Organized commands and templates under `paz/` namespace to support multiple toolkit collections
