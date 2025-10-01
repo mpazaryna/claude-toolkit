@@ -14,6 +14,16 @@
       "name": "chiro-page",
       "path": "/Users/mpaz/workspace/chiro-page",
       "claudeDir": ".claude"
+    },
+    {
+      "name": "practice-hub",
+      "path": "/Users/mpaz/workspace/practice-hub",
+      "claudeDir": ".claude"
+    },
+    {
+      "name": "pab-native",
+      "path": "/Users/mpaz/workspace/pab-native",
+      "claudeDir": ".claude"
     }
   ]
 }
