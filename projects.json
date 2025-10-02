@@ -24,6 +24,16 @@
       "name": "pab-native",
       "path": "/Users/mpaz/workspace/pab-native",
       "claudeDir": ".claude"
+    },
+    {
+      "name": "apple-woodshed",
+      "path": "/Users/mpaz/workspace/apple-woodshed",
+      "claudeDir": ".claude"
+    },
+    {
+      "name": "gaggle",
+      "path": "/Users/mpaz/workspace/gaggle",
+      "claudeDir": ".claude"
     }
   ]
 }
