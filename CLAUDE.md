@@ -4,9 +4,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Structure
 
-This is a Claude toolkit repository containing specialized agents, commands, and templates for working with Claude Code. The project is organized as a collection of Markdown-based configuration files rather than a traditional codebase.
+This is a Claude Code plugin repository containing specialized agents, commands, and templates. The project is organized as a collection of Markdown-based configuration files and is distributed as a Claude Code plugin for easy installation across projects.
 
 ### Directory Organization
+
+- **.claude-plugin/** - Plugin configuration
+  - `plugin.json` - Plugin metadata and configuration
+  - `marketplace.json` - Local marketplace configuration for testing
 
 - **agents/** - Specialized AI agents with specific roles and behaviors
   - `quality-control-enforcer.md` - Reviews code for quality issues, workarounds, and incomplete implementations
@@ -63,9 +67,9 @@ Templates in `templates/` offer comprehensive analysis structures for different 
 
 ## Architecture Notes
 
-This repository serves as a configuration and template library for Claude Code operations. It doesn't contain executable code but rather provides structured markdown documents that define:
+This repository serves as a Claude Code plugin providing a configuration and template library. It doesn't contain executable code but rather provides structured markdown documents that define:
 - Agent behaviors and review criteria
 - Command sequences for codebase analysis
 - Templates for documenting different types of projects
 
-The toolkit is designed to enhance Claude Code's ability to understand, analyze, and document various codebases through structured approaches and specialized agent roles.
+The plugin is designed to enhance Claude Code's ability to understand, analyze, and document various codebases through structured approaches and specialized agent roles. It can be installed across multiple projects via the Claude Code plugin system, providing consistent tooling and workflows.
