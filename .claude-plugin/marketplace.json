@@ -1,11 +1,13 @@
 {
-  "name": "claude-toolkit-local",
-  "displayName": "Claude Toolkit (Local)",
-  "description": "Local marketplace for testing the Claude Toolkit plugin",
+  "name": "claude-toolkit",
+  "displayName": "Claude Toolkit",
+  "description": "A collection of specialized agents, commands, and templates for enhancing Claude Code's capabilities",
+  "owner": "mpazaryna",
   "plugins": [
     {
       "name": "claude-toolkit",
-      "path": "."
+      "source": "mpazaryna/claude-toolkit",
+      "description": "Specialized agents, commands, and templates for codebase analysis and documentation"
     }
   ]
 }
