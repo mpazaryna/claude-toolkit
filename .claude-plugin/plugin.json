@@ -1,0 +1,24 @@
+{
+  "name": "claude-toolkit",
+  "displayName": "Claude Toolkit",
+  "version": "1.0.0",
+  "description": "A collection of specialized agents, commands, and templates for enhancing Claude Code's capabilities in understanding, analyzing, and documenting codebases.",
+  "author": {
+    "name": "paz",
+    "url": "https://github.com/mpazaryna"
+  },
+  "homepage": "https://github.com/mpazaryna/claude-toolkit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mpazaryna/claude-toolkit.git"
+  },
+  "keywords": [
+    "agents",
+    "commands",
+    "templates",
+    "codebase-analysis",
+    "documentation",
+    "workflow"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,11 @@
+{
+  "name": "claude-toolkit-local",
+  "displayName": "Claude Toolkit (Local)",
+  "description": "Local marketplace for testing the Claude Toolkit plugin",
+  "plugins": [
+    {
+      "name": "claude-toolkit",
+      "path": "."
+    }
+  ]
+}

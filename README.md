@@ -9,11 +9,27 @@ This toolkit provides structured markdown-based configurations that guide Claude
 - **Pre-configured commands** for systematic codebase exploration
 - **Project templates** for comprehensive analysis of different technology stacks
 
-## Quick Start
+## Installation
+
+### As a Claude Code Plugin (Recommended)
+
+1. Add the local marketplace:
+```bash
+claude-code plugin marketplace add /path/to/claude-toolkit/.claude-plugin
+```
+
+2. Install the plugin:
+```bash
+claude-code plugin install claude-toolkit@claude-toolkit-local
+```
+
+The plugin will now be available across all your projects!
+
+### Manual Installation (Legacy)
 
 1. Clone this repository:
 ```bash
-git clone https://github.com/[username]/claude-toolkit.git
+git clone https://github.com/mpazaryna/claude-toolkit.git
 cd claude-toolkit
 ```
 
@@ -38,6 +54,9 @@ cd claude-toolkit
 
 ```
 claude-toolkit/
+├── .claude-plugin/              # Plugin configuration
+│   ├── plugin.json             # Plugin metadata
+│   └── marketplace.json        # Local marketplace config
 ├── agents/                      # Specialized AI agents
 │   ├── quality-control-enforcer.md
 │   ├── research-docs-fetcher.md
@@ -57,8 +76,10 @@ claude-toolkit/
 
 ## Key Features
 
+- **Claude Code Plugin**: Installable plugin for easy distribution across projects
 - **No Code Execution**: Pure markdown configurations for guidance
 - **Modular Design**: Pick and choose components as needed
 - **Namespaced Organization**: Commands and templates use the `paz/` namespace for better organization and to support multiple toolkit collections
 - **Technology-Specific**: Tailored templates for different stacks
 - **Workflow Integration**: Designed to enhance developer workflows
+- **Shareable**: Easy to share with teams via marketplace distribution
