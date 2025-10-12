@@ -83,3 +83,8 @@ claude-toolkit/
 - **Technology-Specific**: Tailored templates for different stacks
 - **Workflow Integration**: Designed to enhance developer workflows
 - **Shareable**: Easy to share with teams via marketplace distribution
+
+
+```bash
+/plugin marketplace add https://github.com/mpazaryna/claude-toolkit  
+```
