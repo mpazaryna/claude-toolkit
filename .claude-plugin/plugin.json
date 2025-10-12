@@ -20,5 +20,27 @@
     "documentation",
     "workflow"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "agents": [
+    "./agents/quality-control-enforcer.md",
+    "./agents/research-docs-fetcher.md",
+    "./agents/work-completion-summarizer.md"
+  ],
+  "commands": [
+    "./commands/paz/tools/playwright.md",
+    "./commands/paz/context/rebuild_context.md",
+    "./commands/paz/context/rebuild_readme.md",
+    "./commands/paz/prime/mcp_dev.md",
+    "./commands/paz/prime/web_dev.md",
+    "./commands/paz/learn/acb.md",
+    "./commands/paz/git/fix-github-issue.md",
+    "./commands/paz/git/release-version.md",
+    "./commands/paz/git/start-new.md",
+    "./commands/paz/plan/breakdown.md",
+    "./commands/paz/plan/issue.md",
+    "./commands/paz/research/task.md",
+    "./commands/paz/decide/technical.md",
+    "./commands/paz/plan/sync.md",
+    "./commands/paz/goose/README.md"
+  ]
 }
