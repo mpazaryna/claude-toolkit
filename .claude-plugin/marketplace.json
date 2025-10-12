@@ -2,11 +2,14 @@
   "name": "claude-toolkit",
   "displayName": "Claude Toolkit",
   "description": "A collection of specialized agents, commands, and templates for enhancing Claude Code's capabilities",
-  "owner": "mpazaryna",
+  "owner": {
+    "name": "mpazaryna",
+    "url": "https://github.com/mpazaryna"
+  },
   "plugins": [
     {
       "name": "claude-toolkit",
-      "source": "mpazaryna/claude-toolkit",
+      "source": "./",
       "description": "Specialized agents, commands, and templates for codebase analysis and documentation"
     }
   ]
