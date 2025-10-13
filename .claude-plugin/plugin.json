@@ -15,41 +15,17 @@
   "keywords": [
     "agents",
     "commands",
-    "templates",
-    "codebase-analysis",
-    "documentation",
-    "workflow"
+    "templates"
   ],
   "license": "MIT",
   "plugins" :[
     {
-      "name": "context-creator",
-      "source": "./plugins/docs/context-creator",
-      "description": "AI-powered context creation tool",
-      "version": "1.0.0",
-      "category": "agentic-dev",
-      "keywords": [
-        "git",
-        "commits",
-        "automation",
-        "devops",
-        "productivity"
-      ],
-      "author": {
-        "name": "Matthew Pazaryna",
-        "email": "[email protected]"
-      },
-      "featured": false
-    },
-    {
-      "name": "context-creator",
-      "source": "./plugins/docs/readme-creator",
+      "name": "readme-rebuild",
+      "source": "./plugins/readme-rebuild",
       "description": "AI-powered readme tool",
       "version": "1.0.0",
       "category": "agentic-dev",
       "keywords": [
-        "git",
-        "commits",
         "automation",
         "productivity"
       ],
