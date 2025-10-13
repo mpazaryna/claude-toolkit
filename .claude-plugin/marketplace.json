@@ -21,6 +21,21 @@
       "author": {
         "name": "Matthew Pazaryna"
       }
+    },
+    {
+      "name": "git-start-new",
+      "source": "./plugins/git-start-new",
+      "description": "Simple example start a new feature",
+      "version": "1.0.0",
+      "category": "example",
+      "keywords": [
+        "example",
+        "tutorial",
+        "beginner"
+      ],
+      "author": {
+        "name": "Matthew Pazaryna"
+      }
     }
   ]
 }
