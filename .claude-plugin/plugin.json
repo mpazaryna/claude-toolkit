@@ -21,26 +21,43 @@
     "workflow"
   ],
   "license": "MIT",
-  "agents": [
-    "./agents/quality-control-enforcer.md",
-    "./agents/research-docs-fetcher.md",
-    "./agents/work-completion-summarizer.md"
-  ],
-  "commands": [
-    "./commands/paz/tools/playwright.md",
-    "./commands/paz/context/rebuild_context.md",
-    "./commands/paz/context/rebuild_readme.md",
-    "./commands/paz/prime/mcp_dev.md",
-    "./commands/paz/prime/web_dev.md",
-    "./commands/paz/learn/acb.md",
-    "./commands/paz/git/fix-github-issue.md",
-    "./commands/paz/git/release-version.md",
-    "./commands/paz/git/start-new.md",
-    "./commands/paz/plan/breakdown.md",
-    "./commands/paz/plan/issue.md",
-    "./commands/paz/research/task.md",
-    "./commands/paz/decide/technical.md",
-    "./commands/paz/plan/sync.md",
-    "./commands/paz/goose/README.md"
+  "plugins" :[
+    {
+      "name": "context-creator",
+      "source": "./plugins/docs/context-creator",
+      "description": "AI-powered context creation tool",
+      "version": "1.0.0",
+      "category": "agentic-dev",
+      "keywords": [
+        "git",
+        "commits",
+        "automation",
+        "devops",
+        "productivity"
+      ],
+      "author": {
+        "name": "Matthew Pazaryna",
+        "email": "[email protected]"
+      },
+      "featured": false
+    },
+    {
+      "name": "context-creator",
+      "source": "./plugins/docs/readme-creator",
+      "description": "AI-powered readme tool",
+      "version": "1.0.0",
+      "category": "agentic-dev",
+      "keywords": [
+        "git",
+        "commits",
+        "automation",
+        "productivity"
+      ],
+      "author": {
+        "name": "Matthew Pazaryna",
+        "email": "[email protected]"
+      },
+      "featured": false
+    }
   ]
 }

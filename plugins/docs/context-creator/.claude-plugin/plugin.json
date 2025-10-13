@@ -1,0 +1,12 @@
+{
+  "name": "context-creator",
+  "version": "1.0.0",
+  "description": "Rebuilds context for the agentic processes",
+  "author": {
+    "name": "Matthew Pazaryna",
+    "email": "[email protected]"
+  },
+  "repository": "https://github.com/mpazaryna/claude-toolkit",
+  "license": "MIT",
+  "keywords": ["playbooks", "devops"]
+}

@@ -1,0 +1,19 @@
+    {
+      "name": "context-creator",
+      "source": "./plugins/docs/context-creator",
+      "description": "AI-powered context creation tool",
+      "version": "1.0.0",
+      "category": "agentic-dev",
+      "keywords": [
+        "git",
+        "commits",
+        "automation",
+        "devops",
+        "productivity"
+      ],
+      "author": {
+        "name": "Matthew Pazaryna",
+        "email": "[email protected]"
+      },
+      "featured": true
+    }
