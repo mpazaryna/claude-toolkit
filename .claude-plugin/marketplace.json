@@ -8,9 +8,19 @@
   },
   "plugins": [
     {
-      "name": "claude-toolkit",
-      "source": "./",
-      "description": "Specialized agents, commands, and templates for codebase analysis and documentation"
+      "name": "hello-world",
+      "source": "./plugins/hello-world",
+      "description": "Simple example plugin demonstrating basic slash commands",
+      "version": "1.0.0",
+      "category": "example",
+      "keywords": [
+        "example",
+        "tutorial",
+        "beginner"
+      ],
+      "author": {
+        "name": "Jeremy Longshore"
+      }
     }
   ]
 }
