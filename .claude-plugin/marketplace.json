@@ -36,6 +36,21 @@
       "author": {
         "name": "Matthew Pazaryna"
       }
+    },
+    {
+      "name": "decide-technical",
+      "source": "./plugins/decide-technical",
+      "description": "Explore options",
+      "version": "1.0.0",
+      "category": "example",
+      "keywords": [
+        "dev",
+        "research"
+      ],
+      "author": {
+        "name": "Matthew Pazaryna"
+      }
     }
+
   ]
 }

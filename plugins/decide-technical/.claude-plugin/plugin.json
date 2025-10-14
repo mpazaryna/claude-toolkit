@@ -1,0 +1,12 @@
+{
+  "name": "decide-technical",
+  "version": "1.0.0",
+  "description": "Simple example plugin demonstrating basic slash commands",
+  "author": {
+    "name": "Matthew Pazaryna",
+    "email": "[email protected]"
+  },
+  "repository": "https://github.com/mpazaryna/claude-toolkit",
+  "license": "MIT",
+  "keywords": ["example", "tutorial", "beginner"]
+}
