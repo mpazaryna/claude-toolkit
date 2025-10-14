@@ -50,7 +50,20 @@
       "author": {
         "name": "Matthew Pazaryna"
       }
+    },
+    {
+      "name": "research-task",
+      "source": "./plugins/research-task",
+      "description": "Research a particular task or concept",
+      "version": "1.0.0",
+      "category": "research",
+      "keywords": [
+        "dev",
+        "research"
+      ],
+      "author": {
+        "name": "Matthew Pazaryna"
+      }
     }
-
   ]
 }

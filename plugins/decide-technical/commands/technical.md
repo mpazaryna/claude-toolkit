@@ -1,5 +1,5 @@
 ---
-description: Analyze technical options and generate decision framework (called by issue agent)
+description: Analyze technical options and help generate decision
 shortcut: td
 category: dev
 difficulty: beginner

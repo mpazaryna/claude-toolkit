@@ -1,0 +1,12 @@
+{
+  "name": "research-task",
+  "version": "1.0.0",
+  "description": "Deep Dive Research",
+  "author": {
+    "name": "Matthew Pazaryna",
+    "email": "[email protected]"
+  },
+  "repository": "https://github.com/mpazaryna/claude-toolkit",
+  "license": "MIT",
+  "keywords": ["research", "investigate"]
+}
