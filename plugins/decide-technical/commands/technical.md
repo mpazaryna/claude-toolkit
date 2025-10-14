@@ -1,10 +1,11 @@
 ---
-name: Technical Decision
+description: Analyze technical options and generate decision framework (called by issue agent)
 shortcut: td
 category: dev
+difficulty: beginner
 estimated_time: instant
 allowed-tools: WebFetch, WebSearch, Read, Bash
-description: Analyze technical options and generate decision framework (called by issue agent)
+version: 1.0.0
 ---
 
 # Technical Decision Agent
