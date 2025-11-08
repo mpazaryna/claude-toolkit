@@ -41,15 +41,15 @@ Detect project types by scanning for these files:
 
 For each detected technology, read the corresponding template file:
 
-**Base Template**: Always include `./assets/base.md`
+**Base Template**: Always include `/assets/base.md`
 
 **Technology Templates** (include if detected):
-- MCP Server → `.claude/templates/paz/acb/mcp-server.md`
-- Next.js → `.claude/templates/paz/acb/nextjs.md`
-- Cloudflare Workers → `.claude/templates/paz/acb/cloudflare-worker.md`
-- TypeScript → `.claude/templates/paz/acb/typescript.md`
-- Jest → `.claude/templates/paz/acb/jest-testing.md`
-- iOS → `.claude/templates/paz/acb/ios-swift.md`
+- MCP Server → `/assets/mcp-server.md`
+- Next.js → `/assets/nextjs.md`
+- Cloudflare Workers → `/assets/cloudflare-worker.md`
+- TypeScript → `/assets/typescript.md`
+- Jest → `/assets/jest-testing.md`
+- iOS → `/assets/ios-swift.md`
 
 ### Step 4: Execute Comprehensive Analysis
 
@@ -123,11 +123,11 @@ When you run this command on the compass project:
    - Finds `tsconfig.json` → TypeScript detected
 
 2. **Template Loading**:
-   - Read `.claude/templates/paz/acb/base.md`
-   - Read `.claude/templates/paz/acb/mcp-server.md`
-   - Read `.claude/templates/paz/acb/cloudflare-worker.md`
-   - Read `.claude/templates/paz/acb/typescript.md`
-   - Read `.claude/templates/paz/acb/jest-testing.md`
+   - Read `/assets/base.md`
+   - Read `/assets/mcp-server.md`
+   - Read `/assets/cloudflare-worker.md`
+   - Read `/assets/typescript.md`
+   - Read `/assets/jest-testing.md`
 
 3. **Merged Analysis**: Creates comprehensive analysis combining all templates
 
