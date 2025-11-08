@@ -21,7 +21,7 @@ If no `FOLDER_PATH` is provided, STOP immediately and ask the user to provide it
 First, analyze the target directory to detect project type and load appropriate templates:
 
 1. **Scan for key indicator files** in the target directory
-2. **Load base analysis template** from `.claude/templates/paz/acb/base.md`
+2. **Load base analysis template** from `.assets/base.md`
 3. **Load technology-specific templates** based on detection
 4. **Merge templates** into comprehensive analysis structure
 
@@ -41,7 +41,7 @@ Detect project types by scanning for these files:
 
 For each detected technology, read the corresponding template file:
 
-**Base Template**: Always include `.claude/templates/paz/acb/base.md`
+**Base Template**: Always include `./assets/base.md`
 
 **Technology Templates** (include if detected):
 - MCP Server → `.claude/templates/paz/acb/mcp-server.md`
