@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(done)"
+      "Bash(done)",
+      "WebFetch(domain:www.claude.com)",
+      "Bash(mkdir:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
