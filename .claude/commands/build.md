@@ -1,6 +1,6 @@
-# /build - Start Building Skills, Prompts, Agents, or Hooks
+# /build - Start Building Skills, Prompts, Agents, Commands, or Hooks
 
-**Quick access to the factory-guide orchestrator for building custom Skills, Prompts, Agents, or Hooks.**
+**Quick access to the factory-guide orchestrator for building custom Skills, Prompts, Agents, Commands, or Hooks.**
 
 ---
 
@@ -11,6 +11,7 @@
 /build skill
 /build prompt
 /build agent
+/build command
 /build hook
 ```
 
@@ -20,15 +21,16 @@
 
 **Without arguments** (`/build`):
 - Invokes the **factory-guide** orchestrator
-- Asks what you want to build (Skill, Prompt, Agent, or Hook)
+- Asks what you want to build (Skill, Prompt, Agent, Command, or Hook)
 - Delegates to appropriate specialist
 - Guides you through complete process
 
-**With argument** (`/build skill|prompt|agent|hook`):
+**With argument** (`/build skill|prompt|agent|command|hook`):
 - Directly delegates to the specialist:
   - `/build skill` → **skills-guide** agent
   - `/build prompt` → **prompts-guide** agent
   - `/build agent` → **agents-guide** agent
+  - `/build command` → **commands-guide** agent
   - `/build hook` → **hooks-guide** agent
 
 ---
@@ -50,9 +52,10 @@ What would you like to create today?
 1. Claude Skill (multi-file capability)
 2. Mega-Prompt (for any LLM)
 3. Claude Agent (workflow specialist)
-4. Claude Hook (workflow automation)
+4. Slash Command (custom command)
+5. Claude Hook (workflow automation)
 
-Enter 1, 2, 3, or 4: ___
+Enter 1, 2, 3, 4, or 5: ___
 ```
 
 ---
@@ -123,6 +126,31 @@ Your agent's purpose: ___
 
 ---
 
+### Build a Command (Direct)
+
+```
+/build command
+```
+
+**Output**:
+```
+Let's build your custom Claude Slash Command!
+
+Question 1: What should this command do? What's its main purpose?
+
+Examples:
+- Review pull requests for code quality
+- Analyze customer feedback data
+- Generate API documentation
+
+Your answer: ___
+```
+
+→ Continues with commands-guide agent's question flow
+→ Generates complete .md command file with YAML frontmatter
+
+---
+
 ### Build a Hook (Direct)
 
 ```
@@ -155,7 +183,7 @@ Your hook's purpose: ___
 
 **The orchestrator or specialist will**:
 1. Ask you straightforward questions (3-11 total depending on path)
-2. Generate complete output (skill/prompt/agent/hook)
+2. Generate complete output (skill/prompt/agent/command/hook)
 3. Validate format and quality
 4. Create all necessary files
 5. Provide installation instructions

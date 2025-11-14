@@ -136,7 +136,7 @@ Reading SKILLS_FACTORY_PROMPT template...
 
 Use Read tool:
 ```
-Read: documentation/templates/SKILLS_FACTORY_PROMPT.md
+Read: .claude/templates/SKILLS_FACTORY_PROMPT.md
 ```
 
 ### Step 2: Fill Template Variables
@@ -259,7 +259,7 @@ Need to build another skill? Just ask the factory-guide again!"
 
 "I couldn't find the SKILLS_FACTORY_PROMPT template.
 
-Expected location: documentation/templates/SKILLS_FACTORY_PROMPT.md
+Expected location: .claude/templates/SKILLS_FACTORY_PROMPT.md
 
 Please ensure this file exists, or let me know if it's in a different location."
 
@@ -312,7 +312,7 @@ Let me fix these and regenerate..."
 
 **SKILLS_FACTORY_PROMPT Location**:
 ```
-documentation/templates/SKILLS_FACTORY_PROMPT.md
+.claude/templates/SKILLS_FACTORY_PROMPT.md
 ```
 
 **Output Location**:

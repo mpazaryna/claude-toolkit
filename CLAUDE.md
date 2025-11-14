@@ -8,6 +8,25 @@ This is a Claude Code plugin repository containing specialized agents, commands,
 
 ### Directory Organization
 
+- **.claude/** - Core Claude Code configuration (portable, self-contained)
+  - **agents/** - Specialized factory guide agents
+    - `factory-guide.md` - Main orchestrator for building skills, prompts, agents, commands, hooks
+    - `skills-guide.md` - Interactive guide for building Claude Skills
+    - `prompts-guide.md` - Interactive guide for generating mega-prompts
+    - `agents-guide.md` - Interactive guide for building Claude Agents
+    - `commands-guide.md` - Interactive guide for building slash commands
+    - `hooks-guide.md` - Interactive guide for building Claude hooks
+  - **commands/** - Slash commands for common tasks
+    - `build.md` - Meta-command to build skills, prompts, agents, commands, or hooks
+    - **git/** - Git-related commands
+      - `is.md` - Fetch and display GitHub issue details
+  - **templates/** - Factory prompt templates (self-contained for portability)
+    - `SKILLS_FACTORY_PROMPT.md` - Template for generating Claude Skills
+    - `PROMPTS_FACTORY_PROMPT.md` - Template for generating mega-prompts
+    - `AGENTS_FACTORY_PROMPT.md` - Template for generating Claude Agents
+    - `MASTER_SLASH_COMMANDS_PROMPT.md` - Template for generating slash commands
+    - `HOOKS_FACTORY_PROMPT.md` - Template for generating Claude hooks
+
 - **.claude-plugin/** - Plugin configuration
   - `plugin.json` - Plugin metadata and configuration
   - `marketplace.json` - Local marketplace configuration for testing
@@ -37,6 +56,9 @@ This is a Claude Code plugin repository containing specialized agents, commands,
     - `jest-testing.md` - Jest testing template
     - `mcp-server.md` - MCP server template
     - `ios-swift.md` - iOS Swift project template
+
+- **generated-commands/** - Output directory for generated slash commands
+- **generated-skills/** - Output directory for generated Claude Skills
 
 ## Key Components
 
@@ -73,3 +95,18 @@ This repository serves as a Claude Code plugin providing a configuration and tem
 - Templates for documenting different types of projects
 
 The plugin is designed to enhance Claude Code's ability to understand, analyze, and document various codebases through structured approaches and specialized agent roles. It can be installed across multiple projects via the Claude Code plugin system, providing consistent tooling and workflows.
+
+### Portability Design
+
+The `.claude/` directory is completely self-contained and portable:
+- All factory templates are in `.claude/templates/` (no external dependencies)
+- All factory guide agents reference templates using relative paths (`.claude/templates/...`)
+- The entire `.claude/` directory can be copied to any project for instant meta-generator functionality
+- No external `documentation/` directory required - everything needed is inside `.claude/`
+
+To use the meta-generator in a new project:
+```bash
+cp -r .claude/ ~/new-project/
+cd ~/new-project
+# Now you can use /build to generate skills, prompts, agents, commands, or hooks
+```

@@ -196,7 +196,7 @@ expertise: [From Q6]
 
 Read AGENTS_FACTORY_PROMPT template:
 ```
-Read: documentation/templates/AGENTS_FACTORY_PROMPT.md
+Read: .claude/templates/AGENTS_FACTORY_PROMPT.md
 ```
 
 Use template + user's answers to generate comprehensive system prompt covering:
