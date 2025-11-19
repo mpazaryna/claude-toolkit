@@ -128,7 +128,3 @@ cd ~/my-new-project
 ```bash
 /plugin marketplace add https://github.com/mpazaryna/claude-toolkit  
 ```
-
-# Small bump
-
-Will this get registered inside of Linear? Trying again...
