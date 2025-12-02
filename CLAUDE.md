@@ -19,67 +19,53 @@ This is a Claude Code plugin repository containing specialized agents, commands,
   - **commands/** - Slash commands for common tasks
     - `build.md` - Meta-command to build skills, prompts, agents, commands, or hooks
     - **git/** - Git-related commands
-      - `is.md` - Fetch and display GitHub issue details
+      - `commit.md` - Stage working tree changes and create a Conventional Commit
+      - `issue.md` - Fetch and display GitHub issue details
+      - `push.md` - Stage, commit, and push the current branch
   - **templates/** - Factory prompt templates (self-contained for portability)
     - `SKILLS_FACTORY_PROMPT.md` - Template for generating Claude Skills
     - `PROMPTS_FACTORY_PROMPT.md` - Template for generating mega-prompts
     - `AGENTS_FACTORY_PROMPT.md` - Template for generating Claude Agents
     - `MASTER_SLASH_COMMANDS_PROMPT.md` - Template for generating slash commands
     - `HOOKS_FACTORY_PROMPT.md` - Template for generating Claude hooks
+  - **skills/** - Pre-built Claude Skills for use in projects
+    - `journal/` - Git-first journal skill with minimal user input
+    - `repo-summarizer/` - Repository analysis and documentation generator
 
 - **.claude-plugin/** - Plugin configuration
-  - `plugin.json` - Plugin metadata and configuration
   - `marketplace.json` - Local marketplace configuration for testing
 
-- **agents/** - Specialized AI agents with specific roles and behaviors
-  - `quality-control-enforcer.md` - Reviews code for quality issues, workarounds, and incomplete implementations
-  - `research-docs-fetcher.md` - Fetches and organizes web documentation into structured markdown files
-  - `work-completion-summarizer.md` - Summarizes completed work
-
-- **commands/** - Pre-configured command templates for common tasks
-  - **paz/prime/** - Prime commands for understanding codebases
-    - `mcp_dev.md` - Understanding MCP server codebases
-    - `web_dev.md` - Understanding web development projects
-  - **paz/learn/** - Learning resources
-    - `acb.md` - Agent-Codebase learning material
-  - **paz/context/** - Context rebuilding commands
-    - `rebuild_context.md` - Rebuilding project context
-    - `rebuild_readme.md` - Regenerating README files
-  - **paz/tools/** - Tool-specific documentation
-    - `playwright.md` - Playwright testing guidance
-
-- **templates/** - Reusable templates for different project types
-  - **paz/acb/** - Agent-Codebase analysis templates
-    - `base.md` - Base codebase analysis template
-    - `typescript.md` - TypeScript project template
-    - `cloudflare-worker.md` - Cloudflare Worker template
-    - `jest-testing.md` - Jest testing template
-    - `mcp-server.md` - MCP server template
-    - `ios-swift.md` - iOS Swift project template
-
-- **generated-commands/** - Output directory for generated slash commands
+- **generated-commands/** - Output directory for generated Claude Commands
 - **generated-skills/** - Output directory for generated Claude Skills
+- **generated-agents/** - Output directory for generated Claude Agents (includes quality-control-enforcer, research-docs-fetcher, work-completion-summarizer, etc.)
+
+- **commands/** - Top-level commands directory with additional slash commands
+- **plugins/** - Example Claude Code plugins for reference
+- **docs/** - Additional documentation and reports
 
 ## Key Components
 
 ### Agents
-Each agent in the `agents/` directory follows a YAML frontmatter format with:
+Factory guide agents in `.claude/agents/` help build new resources, while generated agents in `generated-agents/` provide specialized functionality. Each agent follows a YAML frontmatter format with:
 - `name`: Agent identifier
 - `description`: When to use the agent (with examples)
 - `color`: Visual indicator
 - Agent-specific instructions and methodology
 
 ### Commands
-Commands in `commands/` provide structured workflows with:
+Commands in `.claude/commands/` and `commands/` provide structured workflows with:
 - `description`: Command purpose in frontmatter
 - Sections like `Run`, `Read`, and `Report` for systematic execution
 
 ### Templates
-Templates in `templates/` offer comprehensive analysis structures for different project types, focusing on:
+Templates in `.claude/templates/` offer comprehensive analysis structures for different project types, focusing on:
 - Implementation-ready documentation
 - File-by-file breakdowns
 - Actionable modification guidance
 - Developer workflow integration
+
+### Skills
+Pre-built skills in `.claude/skills/` provide ready-to-use functionality that can be installed in any project, including journal generation and repository documentation.
 
 ## Usage Patterns
 
