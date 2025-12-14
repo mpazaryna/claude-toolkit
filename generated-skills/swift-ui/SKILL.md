@@ -64,6 +64,15 @@ Based on what you're building, I'll reference the appropriate implementation gui
 - SwiftData direct-in-view patterns
 - Testing strategies without ViewModels
 
+### Data Persistence (SwiftData)
+**When**: Storing data locally, Core Data replacement, iOS 17+
+**Reference**: `references/swiftdata.md`
+- @Model macro for defining entities
+- @Query for reactive data fetching in views
+- ModelContainer and ModelContext setup
+- Relationships, predicates, migrations
+- Direct SwiftUI integration (no ViewModel layer)
+
 ## Quick Reference
 
 ### Essential Patterns

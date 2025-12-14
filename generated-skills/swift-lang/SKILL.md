@@ -2,8 +2,8 @@
 name: swift-lang
 description: |
   Swift language mastery skill covering advanced language features beyond UI.
-  Use when working with macros, concurrency (async/await, actors), Swift Testing,
-  generics, memory optimization, or result builders. Not for SwiftUI patterns - see design-swiftui.
+  Use when working with macros, concurrency (async/await, actors), networking,
+  Swift Testing, generics, memory optimization, or result builders. Not for SwiftUI patterns - see swift-ui.
 ---
 
 # swift-lang
@@ -65,6 +65,18 @@ Based on what you're building, load the appropriate reference:
 **When**: Building custom DSLs, understanding @ViewBuilder internals
 **References**:
 - `references/result-builders/custom-dsl.md` - Building your own @resultBuilder
+
+### Networking
+**When**: Making HTTP requests, API clients, async data fetching
+**References**:
+- `references/networking/async-networking.md` - URLSession with async/await, API client patterns
+
+**Key Patterns:**
+- Async/await with URLSession
+- Actor-based API clients
+- Authentication and retry logic
+- Concurrent requests with `async let`
+- Error handling and cancellation
 
 ## Quick Reference
 
