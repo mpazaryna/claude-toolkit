@@ -44,8 +44,8 @@ The structure should look like:
 
 For complete design coverage, also install:
 
-- `design-web` - Web/CSS implementation patterns
-- `design-swiftui` - SwiftUI/iOS implementation patterns
+- `web-design` - Web/CSS implementation patterns
+- `swift-ui` - SwiftUI/iOS implementation patterns
 - `design-review` - Audit checklists and submission prep
 
 ## Usage

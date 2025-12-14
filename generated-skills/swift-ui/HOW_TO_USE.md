@@ -1,4 +1,4 @@
-# How to Use design-swiftui
+# How to Use swift-ui
 
 ## Basic Usage
 
@@ -26,9 +26,9 @@ For building and structuring views:
 For data flow and property wrappers:
 
 ```
-"When do I use @StateObject vs @ObservedObject?"
-"Set up MVVM for this view"
-"How do I share state across views?"
+"When do I use @State vs @Binding?"
+"How do I share state across views with Environment?"
+"Set up data flow for this feature"
 ```
 
 ### 3. Layout
@@ -58,8 +58,25 @@ For VoiceOver and Dynamic Type:
 "Add custom VoiceOver actions"
 ```
 
+### 6. Architecture
+For app structure and data flow patterns:
+
+```
+"Do I need a ViewModel for this?"
+"How do I inject dependencies?"
+"Show me the .task(id:) pattern"
+```
+
 ## Tips
 
 - **Mention iOS version** - Some APIs are iOS 16+ or iOS 17+
 - **Describe the context** - "For a settings screen" helps narrow recommendations
-- **Ask about trade-offs** - "@State vs @StateObject" gets explanation of when to use each
+- **Ask about trade-offs** - "@State vs Environment" gets explanation of when to use each
+- **Question ViewModels** - Often you don't need them; ask about alternatives
+
+## Combined with swift-lang
+
+For language-level features, use alongside `swift-lang`:
+
+- `swift-ui` for view patterns, state management, architecture
+- `swift-lang` for macros, concurrency, testing, generics

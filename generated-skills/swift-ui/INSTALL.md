@@ -1,9 +1,17 @@
-# Installing design-swiftui
+# Installing swift-ui
 
 ## Quick Install
 
 ```bash
-cp -r design-swiftui/ /path/to/your/project/.claude/skills/
+cp -r swift-ui/ /path/to/your/project/.claude/skills/
+```
+
+## Global Install
+
+For availability across all projects:
+
+```bash
+cp -r swift-ui/ ~/.claude/skills/
 ```
 
 ## Verify Installation
@@ -11,7 +19,7 @@ cp -r design-swiftui/ /path/to/your/project/.claude/skills/
 ```
 .claude/
 └── skills/
-    └── design-swiftui/
+    └── swift-ui/
         ├── SKILL.md
         ├── README.md
         ├── HOW_TO_USE.md
@@ -21,13 +29,14 @@ cp -r design-swiftui/ /path/to/your/project/.claude/skills/
             ├── state.md
             ├── layout.md
             ├── animation.md
-            └── accessibility.md
+            ├── accessibility.md
+            └── architecture.md
 ```
 
 ## Related Skills
 
+- `swift-lang` - Swift language features (macros, concurrency, testing)
 - `design-principles` - Design theory
-- `design-web` - Web/CSS implementation
 - `design-review` - App Store submission prep
 
 ## Usage
@@ -36,4 +45,5 @@ cp -r design-swiftui/ /path/to/your/project/.claude/skills/
 "Build me a SwiftUI card component"
 "How should I manage state?"
 "Add animation to this view"
+"Do I need a ViewModel for this?"
 ```

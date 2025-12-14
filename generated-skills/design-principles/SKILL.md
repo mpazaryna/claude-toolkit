@@ -48,7 +48,7 @@ This skill covers five universal areas:
 1. **Identify the principle area** from the request
 2. **Load the appropriate reference**
 3. **Apply principles** to the specific context
-4. **Hand off to platform skill** for implementation (design-web, design-swiftui)
+4. **Hand off to platform skill** for implementation (web-design, swift-ui)
 
 ## Quick Principles
 
@@ -133,8 +133,8 @@ This informs all subsequent choices.
 | Skill | Purpose |
 |-------|---------|
 | `design-principles` | Universal theory (this skill) |
-| `design-web` | Web implementation (CSS, HTML) |
-| `design-swiftui` | SwiftUI implementation (HIG, Swift) |
+| `web-design` | Web implementation (CSS, HTML) |
+| `swift-ui` | SwiftUI implementation (HIG, Swift) |
 | `design-review` | Audits and reviews (App Store, accessibility) |
 
 ## Workflow
@@ -142,7 +142,7 @@ This informs all subsequent choices.
 ```
 design-principles: "What's the right approach?"
         ↓
-design-web OR design-swiftui: "Build it for this platform"
+web-design OR swift-ui: "Build it for this platform"
         ↓
 design-review: "Is it ready for production?"
 ```

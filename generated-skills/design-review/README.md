@@ -26,8 +26,8 @@ Provides systematic review checklists for polishing designs before launch. This 
 This skill is part of the `design-*` family:
 
 - **design-principles** - Universal theory
-- **design-web** - Web implementation
-- **design-swiftui** - SwiftUI implementation
+- **web-design** - Web implementation
+- **swift-ui** - SwiftUI implementation
 - **design-review** (this skill) - Audits and submission
 
 ## Quick Example

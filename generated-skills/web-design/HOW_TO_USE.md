@@ -1,4 +1,4 @@
-# How to Use design-web
+# How to Use web-design
 
 ## Basic Usage
 

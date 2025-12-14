@@ -1,9 +1,9 @@
 ---
-name: design-swiftui
-description: SwiftUI implementation patterns for building polished iOS/macOS apps. Use when building views, managing state, creating layouts, or implementing animations in SwiftUI.
+name: swift-ui
+description: SwiftUI implementation patterns for building polished iOS/macOS apps. Use when building views, managing state, creating layouts, implementing animations, or structuring app architecture in SwiftUI.
 ---
 
-# design-swiftui
+# swift-ui
 
 SwiftUI implementation patterns for building distinctive iOS and macOS interfaces.
 
@@ -55,6 +55,15 @@ Based on what you're building, I'll reference the appropriate implementation gui
 - Dynamic Type support
 - Accessibility traits and actions
 
+### Architecture (No MVVM)
+**When**: App structure, data flow patterns, questioning if you need ViewModels
+**Reference**: `references/architecture.md`
+- Views as pure state expressions
+- Environment for dependency injection
+- `.task(id:)` and `.onChange()` as mini reducers
+- SwiftData direct-in-view patterns
+- Testing strategies without ViewModels
+
 ## Quick Reference
 
 ### Essential Patterns
@@ -73,16 +82,18 @@ struct ContentView: View {
     }
 }
 
-// MARK: - State Management
+// MARK: - State Management (No ViewModel needed)
 
 struct ItemDetailView: View {
-    @StateObject private var viewModel: ItemViewModel
+    @Environment(APIClient.self) private var client
     @Environment(\.dismiss) private var dismiss
+    @State private var item: Item?
 
     var body: some View {
         Form {
             // content
         }
+        .task { await loadItem() }
     }
 }
 
@@ -120,14 +131,16 @@ Color(uiColor: .secondarySystemBackground)
 ## Anti-Patterns
 
 - Force unwrapping in views
-- Massive view bodies (extract components)
-- Business logic in views
+- Massive view bodies (extract into subviews, not ViewModels)
+- Business logic in views (move to services in Environment)
 - Ignoring @MainActor for UI updates
 - Not supporting Dynamic Type
 - Hardcoded colors instead of semantic
+- Using ViewModels when @State + Environment suffices
 
 ## Related Skills
 
+- **swift-lang** - Swift language features (macros, concurrency, testing)
 - **design-principles** - Theory behind the choices
-- **design-web** - Web/CSS implementation
+- **web-design** - Web/CSS implementation
 - **design-review** - App Store submission prep

@@ -1,9 +1,9 @@
 ---
-name: design-web
+name: web-design
 description: Web/CSS implementation patterns for building polished frontends. Use when implementing designs in HTML/CSS, building components, or creating responsive web interfaces.
 ---
 
-# design-web
+# web-design
 
 CSS implementation patterns for building distinctive web interfaces.
 
@@ -123,5 +123,5 @@ Based on what you're building, I'll reference the appropriate implementation gui
 ## Related Skills
 
 - **design-principles** - Theory behind the choices
-- **design-swiftui** - iOS/SwiftUI implementation
+- **swift-ui** - iOS/SwiftUI implementation
 - **design-review** - Audit and polish

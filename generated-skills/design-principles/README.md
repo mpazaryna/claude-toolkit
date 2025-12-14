@@ -29,8 +29,8 @@ Provides foundational design principles that apply regardless of implementation 
 This skill is part of the `design-*` family:
 
 - **design-principles** (this skill) - Universal theory
-- **design-web** - Web/CSS implementation
-- **design-swiftui** - SwiftUI/iOS implementation
+- **web-design** - Web/CSS implementation
+- **swift-ui** - SwiftUI/iOS implementation
 - **design-review** - Audits and submission prep
 
 ## Quick Example

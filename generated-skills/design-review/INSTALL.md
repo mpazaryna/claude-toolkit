@@ -25,8 +25,8 @@ cp -r design-review/ /path/to/your/project/.claude/skills/
 ## Related Skills
 
 - `design-principles` - Design theory
-- `design-web` - Web implementation
-- `design-swiftui` - SwiftUI implementation
+- `web-design` - Web implementation
+- `swift-ui` - SwiftUI implementation
 
 ## Usage
 

@@ -1,10 +1,10 @@
-# design-web
+# web-design
 
 CSS implementation patterns for building polished, distinctive web interfaces.
 
 ## What This Skill Does
 
-Provides ready-to-use CSS patterns, component templates, and responsive techniques for web development. This is the **web implementation layer** of the design-* skill family.
+Provides ready-to-use CSS patterns, component templates, and responsive techniques for web development. This is the **web platform implementation** skill.
 
 ## When to Use
 
@@ -25,11 +25,12 @@ Provides ready-to-use CSS patterns, component templates, and responsive techniqu
 
 ## Related Skills
 
-This skill is part of the `design-*` family:
+Platform-specific skills:
+- **swift-ui** - SwiftUI/iOS implementation
+- **web-design** (this skill) - Web/CSS implementation
 
+Design theory:
 - **design-principles** - Universal theory (why)
-- **design-web** (this skill) - Web implementation (how)
-- **design-swiftui** - SwiftUI/iOS implementation
 - **design-review** - Audits and submission prep
 
 ## Quick Example

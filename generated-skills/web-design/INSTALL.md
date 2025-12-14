@@ -1,24 +1,20 @@
-# Installing design-web
+# Installing web-design
 
 ## Quick Install
 
 Copy the skill folder to your project's `.claude/skills/` directory:
 
 ```bash
-cp -r design-web/ /path/to/your/project/.claude/skills/
+cp -r web-design/ /path/to/your/project/.claude/skills/
 ```
 
-## Manual Install
+## Global Install
 
-1. Create the skills directory if it doesn't exist:
-   ```bash
-   mkdir -p .claude/skills
-   ```
+For availability across all projects:
 
-2. Copy the entire `design-web` folder:
-   ```bash
-   cp -r /path/to/design-web .claude/skills/
-   ```
+```bash
+cp -r web-design/ ~/.claude/skills/
+```
 
 ## Verify Installation
 
@@ -27,7 +23,7 @@ The structure should look like:
 ```
 .claude/
 └── skills/
-    └── design-web/
+    └── web-design/
         ├── SKILL.md              # Orchestrator
         ├── README.md             # Overview
         ├── HOW_TO_USE.md         # Usage guide
@@ -41,10 +37,11 @@ The structure should look like:
 
 ## Related Skills
 
-For complete design coverage, also install:
+Platform-specific:
+- `swift-ui` - SwiftUI/iOS implementation
 
+Design theory:
 - `design-principles` - Design theory and fundamentals
-- `design-swiftui` - SwiftUI/iOS implementation
 - `design-review` - Audit and submission prep
 
 ## Usage

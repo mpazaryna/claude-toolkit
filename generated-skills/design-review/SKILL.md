@@ -9,7 +9,7 @@ Systematic review and audit patterns for polishing designs before launch.
 
 ## Scope
 
-This skill covers **review and submission**—the checklists, audits, and compliance checks needed before shipping. For implementation patterns, see `design-web` or `design-swiftui`. For theory, see `design-principles`.
+This skill covers **review and submission**—the checklists, audits, and compliance checks needed before shipping. For implementation patterns, see `web-design` or `swift-ui`. For theory, see `design-principles`.
 
 ## Routing
 
@@ -81,5 +81,5 @@ Based on what you need reviewed, I'll reference the appropriate guide:
 ## Related Skills
 
 - **design-principles** - Theory behind good design
-- **design-web** - Web implementation
-- **design-swiftui** - SwiftUI implementation
+- **web-design** - Web implementation
+- **swift-ui** - SwiftUI implementation

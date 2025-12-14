@@ -1,130 +1,107 @@
 # Claude Toolkit
 
-A collection of specialized agents, commands, and templates for enhancing Claude Code's capabilities in understanding, analyzing, and documenting codebases.
+A collection of specialized skills, agents, commands, and templates for enhancing Claude Code's capabilities.
 
 ## Overview
 
-This toolkit provides structured markdown-based configurations that guide Claude Code through various development tasks. Rather than executable code, it offers:
+This toolkit provides structured markdown-based configurations that guide Claude Code through various development tasks:
+
+- **Skill Families** - Organized collections of progressive-disclosure skills for developer workflow and design
 - **Factory System** - Meta-generator for creating Skills, Prompts, Agents, Commands, and Hooks
-- **Specialized agents** for code review, documentation fetching, and work summarization
-- **Pre-configured commands** for systematic codebase exploration
-- **Project templates** for comprehensive analysis of different technology stacks
+- **Specialized Agents** - Code review, documentation fetching, and work summarization
+- **Pre-configured Commands** - Systematic codebase exploration and git workflows
 
-### Factory System (Meta-Generator)
+## Skill Families
 
-The toolkit includes a powerful factory system that helps you build custom Claude Code components:
-- Use `/build` to create Skills, Prompts, Agents, Commands, or Hooks
-- Guided question-and-answer process (4-11 questions depending on component type)
-- Generates complete, validated, production-ready output
-- Self-contained in `.claude/` directory for easy portability
+### dev-* (Developer Workflow)
 
-## Installation
+Skills for the developer thinking and artifact generation process:
 
-### As a Claude Code Plugin (Recommended)
+| Skill | Purpose |
+|-------|---------|
+| **dev-inquiry** | Investigation & technical decisions (Feynman-style exploration, spikes, scoring) |
+| **dev-explore** | Codebase understanding (analyze, MOC, portfolio modes) |
+| **dev-reports** | Journals & status reports (git journal, devlog, 22A/22B) |
+| **dev-context** | Context scaffolding (ADR, Design, Spec, Plan templates) |
 
-1. Add the local marketplace:
-```bash
-claude-code plugin marketplace add /path/to/claude-toolkit/.claude-plugin
+### design-* (UI Design)
+
+Skills for design theory and platform-specific implementation:
+
+| Skill | Purpose |
+|-------|---------|
+| **design-principles** | Universal theory (typography, color, hierarchy, motion, accessibility) |
+| **design-web** | Web/CSS implementation (variables, components, backgrounds, responsive) |
+| **design-swiftui** | SwiftUI implementation (views, state, layout, animation, accessibility) |
+| **design-review** | Audits & submission (App Store, accessibility audit, design checklist) |
+
+Each skill follows **progressive disclosure architecture**:
+- Small orchestrator SKILL.md (~60-80 lines) routes to focused reference files
+- Reference files go deep on specific topics
+- Reduces cognitive overhead while maintaining depth
+
+## Factory System
+
+Build custom Claude Code components with guided workflows:
+
+```
+/build → Choose: Skills | Prompts | Agents | Commands | Hooks
+      → Answer 4-11 questions
+      → Get production-ready output
 ```
 
-2. Install the plugin:
-```bash
-claude-code plugin install claude-toolkit@claude-toolkit-local
-```
-
-The plugin will now be available across all your projects!
-
-### Manual Installation (Legacy)
-
-1. Clone this repository:
-```bash
-git clone https://github.com/mpazaryna/claude-toolkit.git
-cd claude-toolkit
-```
-
-2. Add your project to the index:
-```bash
-./deploy.sh add-project my-app ~/path/to/my-app
-```
-
-3. Deploy components:
-```bash
-./deploy.sh deploy-all my-app
-```
-
-## Documentation
-
-- **[Installation & Deployment](docs/installation.md)** - Complete setup and deployment guide
-- **[Components](docs/components.md)** - Detailed overview of agents, commands, and templates
-- **[Usage](docs/usage.md)** - How to use the toolkit in your projects
-- **[Maintenance](docs/maintenance.md)** - Meta-tooling and inspiration
+The factory system lives in `.claude/` and is fully portable—copy to any project for instant meta-generator functionality.
 
 ## Structure
 
 ```
 claude-toolkit/
-├── .claude/                     # Core configuration (portable, self-contained)
-│   ├── agents/                 # Factory guide agents
-│   │   ├── factory-guide.md   # Main orchestrator
-│   │   ├── skills-guide.md    # Skills builder
-│   │   ├── prompts-guide.md   # Prompts generator
-│   │   ├── agents-guide.md    # Agents builder
-│   │   ├── commands-guide.md  # Commands builder
-│   │   └── hooks-guide.md     # Hooks builder
-│   ├── commands/               # Slash commands
-│   │   ├── build.md           # /build command
-│   │   └── git/
-│   │       └── is.md          # /git:is command
-│   └── templates/              # Factory templates (self-contained)
-│       ├── SKILLS_FACTORY_PROMPT.md
-│       ├── PROMPTS_FACTORY_PROMPT.md
-│       ├── AGENTS_FACTORY_PROMPT.md
-│       ├── MASTER_SLASH_COMMANDS_PROMPT.md
-│       └── HOOKS_FACTORY_PROMPT.md
-├── .claude-plugin/              # Plugin configuration
-│   ├── plugin.json             # Plugin metadata
-│   └── marketplace.json        # Local marketplace config
-├── agents/                      # Specialized AI agents
-│   ├── quality-control-enforcer.md
-│   ├── research-docs-fetcher.md
-│   └── work-completion-summarizer.md
-├── commands/                    # Pre-configured workflows
-│   └── paz/
-│       ├── prime/              # Codebase understanding
-│       ├── learn/              # Learning resources
-│       ├── context/            # Context rebuilding
-│       └── tools/              # Tool-specific docs
-├── templates/                   # Project analysis templates
-│   └── paz/
-│       └── acb/                # Agent-Codebase templates
-├── generated-commands/          # Output for generated commands
-├── generated-skills/            # Output for generated skills
+├── .claude/                     # Core configuration (portable)
+│   ├── agents/                  # Factory guide agents
+│   ├── commands/                # Slash commands (/build, /git:*)
+│   ├── templates/               # Factory templates
+│   └── skills/                  # Core skills (journal, repo-summarizer)
+│
+├── generated-skills/            # Skill families
+│   ├── dev-inquiry/             # Investigation & decisions
+│   ├── dev-explore/             # Codebase understanding
+│   ├── dev-reports/             # Journals & reports
+│   ├── dev-context/             # Context scaffolding
+│   ├── design-principles/       # Universal design theory
+│   ├── design-web/              # Web/CSS implementation
+│   ├── design-swiftui/          # SwiftUI implementation
+│   └── design-review/           # Audits & submission
+│
+├── generated-agents/            # Generated agent definitions
+├── generated-commands/          # Generated command definitions
 └── CLAUDE.md                    # Claude Code instructions
-
 ```
+
+## Quick Start
+
+Copy a skill family to your project:
+
+```bash
+# Developer workflow skills
+cp -r generated-skills/dev-* /path/to/your/project/.claude/skills/
+
+# Design skills
+cp -r generated-skills/design-* /path/to/your/project/.claude/skills/
+
+# Factory system (meta-generator)
+cp -r .claude/ /path/to/your/project/
+```
+
+## Documentation
+
+- **[Components](docs/components.md)** - Detailed overview of agents, commands, and templates
+- **[Usage](docs/usage.md)** - How to use the toolkit in your projects
+- **[Maintenance](docs/maintenance.md)** - Meta-tooling and inspiration
 
 ## Key Features
 
-- **Meta-Generator Factory**: Build custom Skills, Prompts, Agents, Commands, and Hooks via `/build` command
-- **Portable & Self-Contained**: The `.claude/` directory has everything needed - copy to any project for instant meta-generator functionality
-- **Claude Code Plugin**: Installable plugin for easy distribution across projects
-- **No Code Execution**: Pure markdown configurations for guidance
-- **Modular Design**: Pick and choose components as needed
-- **Namespaced Organization**: Commands and templates use the `paz/` namespace for better organization and to support multiple toolkit collections
-- **Technology-Specific**: Tailored templates for different stacks
-- **Workflow Integration**: Designed to enhance developer workflows
-- **Shareable**: Easy to share with teams via marketplace distribution
-
-### Quick Portability Example
-
-Copy the factory system to any project:
-```bash
-cp -r .claude/ ~/my-new-project/
-cd ~/my-new-project
-# Now use /build to generate components
-```
-
-
-```bash
-/plugin marketplace add https://github.com/mpazaryna/claude-toolkit  
-```
+- **Progressive Disclosure** - Small orchestrators route to deep reference files
+- **Portable & Self-Contained** - Copy skill folders to any project
+- **No Code Execution** - Pure markdown configurations
+- **Modular Design** - Pick and choose components as needed
+- **Technology-Specific** - Tailored templates for iOS/Swift, Web, TypeScript, etc.
