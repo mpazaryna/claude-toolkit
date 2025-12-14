@@ -1,0 +1,220 @@
+# How to Use dev-context
+
+## The Core Idea
+
+When you start work, align all supporting context first. This skill generates the scaffolding—you enrich it as work progresses.
+
+## Usage Patterns
+
+### Pattern 1: Full Context Setup
+
+**When**: Starting a new feature or significant work
+
+```
+"Set up context for the authentication refactor"
+"Create context for the new sync engine"
+"Initialize context for the SwiftUI migration"
+```
+
+**What happens**:
+1. Generates ADR (why this work)
+2. Generates Design (how it will work)
+3. Generates Spec (what must be done)
+4. Generates Plan (steps to build)
+5. Cross-references all docs
+6. Creates in `docs/` directory
+
+**Output**:
+```
+Created:
+- docs/adr/007-authentication-refactor.md
+- docs/design/authentication-refactor.md
+- docs/spec/authentication-refactor.md
+- docs/plan/authentication-refactor-implementation.md
+
+All documents cross-referenced. Ready for enrichment.
+```
+
+---
+
+### Pattern 2: Decision Record (ADR Only)
+
+**When**: Making an architectural decision
+
+```
+"Create ADR for choosing SwiftData over CoreData"
+"Document the decision to use JWT authentication"
+"Record why we chose GraphQL"
+```
+
+**What happens**:
+1. Finds next ADR number
+2. Generates ADR with decision structure
+3. Links to existing related docs if found
+
+**Output**:
+```
+Created:
+- docs/adr/008-swiftdata-over-coredata.md
+
+Links to existing: docs/design/data-layer.md
+```
+
+---
+
+### Pattern 3: Implementation Setup
+
+**When**: Planning implementation of decided work
+
+```
+"Set up implementation for the caching feature"
+"Create plan for Phase 2 of the migration"
+"Initialize spec and plan for the API redesign"
+```
+
+**What happens**:
+1. Generates Spec (requirements)
+2. Generates Plan (phases and tasks)
+3. Links to existing ADR/Design
+
+**Output**:
+```
+Created:
+- docs/spec/caching-feature.md
+- docs/plan/caching-feature-implementation.md
+
+Links to existing: docs/adr/005-caching-strategy.md
+```
+
+---
+
+### Pattern 4: Capture Learning (Devlog)
+
+**When**: After completing significant work
+
+```
+"Write devlog for the completed migration"
+"Document lessons from the performance spike"
+"Capture what we learned from the auth refactor"
+```
+
+**What happens**:
+1. Generates Devlog with narrative structure
+2. Links to all related context docs
+3. Uses today's date in filename
+
+**Output**:
+```
+Created:
+- docs/devlog/2025-01-15-authentication-migration-lessons.md
+
+Links to: ADR-007, design/auth, plan/auth-implementation
+```
+
+---
+
+### Pattern 5: Update Existing Context
+
+**When**: Enriching or updating docs
+
+```
+"Update the design doc for auth with the new pattern"
+"Add Phase 3 to the sync engine plan"
+"Update spec with new requirements"
+```
+
+**What happens**:
+1. Reads existing doc
+2. Makes targeted updates
+3. Updates Last Updated / Version
+4. Maintains cross-references
+
+---
+
+## Example Session
+
+```
+User: "Set up context for a new feature: user preferences sync"
+
+Claude: I'll set up the context architecture for user preferences sync.
+
+[Generates 4 docs]
+
+Created:
+- docs/adr/012-user-preferences-sync.md
+  → Decision rationale and alternatives
+
+- docs/design/user-preferences-sync.md
+  → Architecture scaffolding
+
+- docs/spec/user-preferences-sync.md
+  → Requirements structure with placeholders
+
+- docs/plan/user-preferences-sync-implementation.md
+  → Phase breakdown with task templates
+
+All documents are cross-referenced. Next steps:
+
+1. Review ADR - Confirm decision framing
+2. Enrich Design - Add your architecture details
+3. Fill Spec - Define specific requirements
+4. Plan - Break into concrete tasks
+
+Start with the ADR to align on "why" before diving into "how".
+```
+
+## Best Practices
+
+### Do
+
+- **Start with context**: Before coding, align the why/how/what/steps
+- **Enrich progressively**: Fill in details as you learn
+- **Keep cross-references**: When adding new docs, link them
+- **Write devlogs**: Capture lessons while fresh
+
+### Don't
+
+- **Don't skip ADRs**: Future you will wonder "why?"
+- **Don't let docs drift**: Update as reality changes
+- **Don't write novels**: Keep docs focused and scannable
+- **Don't duplicate**: One source of truth per concern
+
+## The Navigation Graph
+
+Every doc links to related docs:
+
+```
+         ADR (WHY)
+            ↕
+Design (HOW) ←→ Spec (WHAT)
+     ↕              ↕
+     └──→ Plan ←────┘
+         (STEPS)
+            ↓
+     Devlog (NARRATIVE)
+```
+
+When an agent (or human) needs context:
+- "Why did we...?" → ADR
+- "How does it...?" → Design
+- "What must it...?" → Spec
+- "What's next?" → Plan
+- "What happened?" → Devlog
+
+## Token Efficiency
+
+| Approach | Lines | Agent Reads |
+|----------|-------|-------------|
+| One big doc | 1000+ | Everything |
+| Context architecture | 200-500 each | Only what needed |
+
+**Result**: 50-80% token reduction per task.
+
+## Reference Files
+
+- `references/templates/` - Templates for each doc type
+- `references/patterns.md` - Cross-referencing patterns
+
+---
+
+Generated by Claude Code Skills Factory
