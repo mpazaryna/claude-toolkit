@@ -13,9 +13,10 @@
 ## Philosophy
 
 When you start new work, you need **aligned context**:
-- WHY are we doing this? (ADR)
+- WHAT are we building for users? (PRD)
+- WHY are we doing this technically? (ADR)
 - HOW will it work? (Design)
-- WHAT must it do? (Spec)
+- WHAT must it do technically? (Spec)
 - STEPS to build it? (Plan)
 
 This isn't documentation you write once and forget. It's **context architecture** that:
@@ -27,9 +28,10 @@ This isn't documentation you write once and forget. It's **context architecture*
 
 | Doc Type | Purpose | Lifecycle | Agent Reads For |
 |----------|---------|-----------|-----------------|
-| **ADR** | WHY decisions | Immutable | Understanding choices |
+| **PRD** | WHAT to build & WHY it matters | Stable | Understanding product intent |
+| **ADR** | WHY technical decisions | Immutable | Understanding choices |
 | **Design** | HOW it works | Living | Building components |
-| **Spec** | WHAT is required | Stable | Validation criteria |
+| **Spec** | WHAT technically required | Stable | Validation criteria |
 | **Plan** | STEPS to build | Evolving | Task execution |
 | **Devlog** | NARRATIVE | Historical | Learning patterns |
 
@@ -38,8 +40,15 @@ This isn't documentation you write once and forget. It's **context architecture*
 **Full Context** — Starting new work:
 ```
 "Set up context for [feature]"
-→ Generates ADR + Design + Spec + Plan
+→ Generates PRD + ADR + Design + Spec + Plan
 → All cross-referenced
+```
+
+**Product Context** — Defining product intent:
+```
+"Create PRD for [feature]"
+→ Generates PRD
+→ Suggests engineering context next
 ```
 
 **Decision Only** — Recording a choice:
@@ -53,7 +62,7 @@ This isn't documentation you write once and forget. It's **context architecture*
 ```
 "Create plan for [feature]"
 → Generates Spec + Plan
-→ Links to existing ADR/Design
+→ Links to existing PRD/ADR/Design
 ```
 
 **Capture Learning** — After work:
@@ -93,6 +102,7 @@ dev-context/
 ├── INSTALL.md                 # Installation
 └── references/
     ├── templates/
+    │   ├── prd.md             # PRD template (FIRST)
     │   ├── adr.md             # ADR template
     │   ├── design.md          # Design template
     │   ├── spec.md            # Spec template

@@ -9,6 +9,9 @@ Patterns for building interconnected context that agents (and humans) can naviga
 Every doc links to related docs, creating a **navigation graph**:
 
 ```
+       PRD (PRODUCT INTENT)
+            │
+            ↓
          ADR (WHY)
             ↑
             │
@@ -23,6 +26,8 @@ Design (HOW) ←→ Spec (WHAT)
      Devlog (NARRATIVE)
 ```
 
+PRD sits at the top—product intent flows down into technical decisions.
+
 Agents can traverse this graph based on what they need.
 
 ---
@@ -33,6 +38,7 @@ Every doc includes a **Related Documents** header:
 
 ```markdown
 **Related Documents**:
+- **Product**: [PRD](../prd/feature.md) - Product intent
 - **Why**: [ADR-NNN](../adr/NNN-feature.md) - Decision rationale
 - **How**: [Design Doc](../design/feature.md) - Architecture
 - **What**: [Spec](../spec/feature.md) - Requirements
@@ -40,10 +46,21 @@ Every doc includes a **Related Documents** header:
 - **Tracking**: [GitHub Issue #N](url) - Current status
 ```
 
+### PRD Cross-References
+
+```markdown
+**Related Documents**:
+- **Decisions**: [ADR-NNN](../adr/NNN-feature.md) - Technical decisions
+- **Architecture**: [Design Doc](../design/feature.md) - How it works
+- **Requirements**: [Spec](../spec/feature.md) - Technical requirements
+- **Implementation**: [Plan](../plan/feature-implementation.md) - Build steps
+```
+
 ### ADR Cross-References
 
 ```markdown
 **Related Documents**:
+- **Product**: [PRD](../prd/feature.md) - Product intent
 - Design: [docs/design/feature.md](../design/feature.md)
 - Specification: [docs/spec/feature.md](../spec/feature.md)
 - Implementation: [docs/plan/feature-implementation.md](../plan/feature-implementation.md)
@@ -97,6 +114,9 @@ Every doc includes a **Related Documents** header:
 
 ```
 docs/
+├── prd/                    # Product Requirements Documents
+│   ├── feature-a.md
+│   └── feature-b.md
 ├── adr/                    # Architecture Decision Records
 │   ├── 001-feature-a.md
 │   ├── 002-feature-b.md
@@ -121,6 +141,7 @@ docs/
 
 | Doc Type | Pattern | Example |
 |----------|---------|---------|
+| PRD | `kebab-case-feature.md` | `user-authentication.md` |
 | ADR | `NNN-kebab-case-title.md` | `001-composable-agent-architecture.md` |
 | Design | `kebab-case-feature.md` | `composable-agent-architecture.md` |
 | Spec | `kebab-case-feature.md` | `composable-agent-architecture.md` |
@@ -147,6 +168,8 @@ Agents can route to the right doc based on the question:
 
 | Question Type | Route To | Why |
 |---------------|----------|-----|
+| "What are we building?" | PRD | Product intent |
+| "What's the user value?" | PRD | Business justification |
 | "Why did we...?" | ADR | Immutable decision record |
 | "How does X work?" | Design | Current architecture |
 | "What are the requirements?" | Spec | Acceptance criteria |
@@ -157,6 +180,9 @@ Agents can route to the right doc based on the question:
 ### Agent Routing Logic
 
 ```
+IF question contains "building" OR "user value" OR "product" OR "feature":
+    → Read PRD
+
 IF question contains "why" OR "decision" OR "chose":
     → Read ADR
 
@@ -179,6 +205,7 @@ IF question contains "learned" OR "happened" OR "lessons":
 
 | Doc Type | Created | Updated | Lifecycle |
 |----------|---------|---------|-----------|
+| **PRD** | Before engineering | When product scope changes | Stable |
 | **ADR** | When decision made | Never | Immutable |
 | **Design** | Start of work | As system evolves | Living |
 | **Spec** | Start of work | When requirements change | Stable |
@@ -197,10 +224,11 @@ IF question contains "learned" OR "happened" OR "lessons":
 - Track changes in changelog
 - Current state always accurate
 
-**Stable (Spec)**:
-- Update only when requirements change
+**Stable (PRD, Spec)**:
+- Update only when scope/requirements change
 - Version changes explicitly
-- Acceptance criteria don't move casually
+- PRD: product scope doesn't move casually
+- Spec: acceptance criteria don't move casually
 
 ---
 
@@ -210,6 +238,7 @@ IF question contains "learned" OR "happened" OR "lessons":
 
 | Doc Type | Target Lines | Purpose |
 |----------|--------------|---------|
+| PRD | 200-400 | Product intent |
 | ADR | 200-300 | Decision context |
 | Design | 300-600 | Architecture details |
 | Spec | 300-500 | Requirements |
@@ -240,13 +269,14 @@ When starting new work:
 
 ```
 1. Parse feature name and description from request
-2. Determine next ADR number (glob docs/adr/*.md)
-3. Generate ADR with decision context
-4. Generate Design with architecture scaffolding
-5. Generate Spec with requirements structure
-6. Generate Plan with phase breakdown
-7. Add cross-references to all docs
-8. Return summary with file paths
+2. Generate PRD with product intent (FIRST)
+3. Determine next ADR number (glob docs/adr/*.md)
+4. Generate ADR with decision context
+5. Generate Design with architecture scaffolding
+6. Generate Spec with requirements structure
+7. Generate Plan with phase breakdown
+8. Add cross-references to all docs
+9. Return summary with file paths
 ```
 
 ### Partial Generation
@@ -266,6 +296,14 @@ When updating existing context:
 ## Quality Checklist
 
 ### After Generation, Validate:
+
+**PRD**:
+- [ ] Has Status, Version, Date, Owner
+- [ ] Problem statement is clear and compelling
+- [ ] User stories have acceptance criteria
+- [ ] Success metrics are measurable
+- [ ] Out of scope is explicit
+- [ ] Links to related docs
 
 **ADR**:
 - [ ] Has Status, Date, Decision Makers
