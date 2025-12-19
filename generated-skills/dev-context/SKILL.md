@@ -3,204 +3,146 @@ name: dev-context
 description: Context architecture skill for aligning work. Use when starting new features, making architectural decisions, or setting up implementation work. Generates interconnected ADR/Design/Spec/Plan scaffolding that agents can navigate and humans can enrich.
 ---
 
-# Dev Context
+# Dev Context (Lean)
 
-Build context architecture for work. Not documentation—**context alignment**.
+Set up working context for GitHub issues. Create formal ADRs when needed.
 
-> When you start new work, align the WHY → HOW → WHAT → STEPS before coding.
+## Two Modes
 
-## The Context Architecture
+### Mode 1: Issue Working Space (Default)
 
-| Doc Type | Purpose | Lifecycle | Agent Reads For |
-|----------|---------|-----------|-----------------|
-| **PRD** | WHAT to build & WHY it matters | Stable | Understanding product intent |
-| **ADR** | WHY technical decisions | Immutable | Understanding past choices |
-| **Design** | HOW it works | Living | Building components |
-| **Spec** | WHAT technically required | Stable | Validation criteria |
-| **Plan** | STEPS to build | Evolving | Task execution |
-| **Devlog** | NARRATIVE | Historical | Learning patterns |
+**Trigger**: "Set up context for issue #115", "Create working space for feature X"
 
-Each doc type is an **interface contract**:
-- PRD: "I tell you WHAT we're building for users"
-- ADR: "I tell you WHY we decided this technically"
-- Design: "I tell you HOW it works today"
-- Spec: "I tell you WHAT it must do technically"
-- Plan: "I tell you STEPS to take"
-
-## When to Use This Skill
-
-**Defining product intent**:
-- "Create PRD for the user authentication feature"
-- "Write up the product requirements for sync"
-
-**Starting new work**:
-- "Set up context for the auth refactor"
-- "Create context for the new sync feature"
-
-**Making architectural decisions**:
-- "Create ADR for choosing SwiftData over CoreData"
-- "Document the caching strategy decision"
-
-**Planning implementation**:
-- "Set up the implementation plan for Phase 2"
-- "Create spec for the API redesign"
-
-**Capturing lessons**:
-- "Write devlog for the completed migration"
-- "Document what we learned from the spike"
-
-## How to Use This Skill
-
-1. **Identify context needs** from the request
-2. **Load appropriate templates** from `references/templates/`
-   - `prd.md` for product intent
-   - `adr.md` for decisions
-   - `design.md` for architecture
-   - `spec.md` for requirements
-   - `plan.md` for implementation
-   - `devlog.md` for lessons learned
-3. **Generate scaffolding** with intelligent placeholders
-4. **Create cross-references** between all docs
-5. **Return file paths** and next steps
-
-## Context Generation Modes
-
-### Mode 1: Full Context (New Feature)
-
-**Trigger**: "Set up context for [feature]", "Create context for [work]"
-
-**Generates**:
+**Creates**:
 ```
-docs/
-├── prd/feature-name.md
-├── adr/NNN-feature-name.md
-├── design/feature-name.md
-├── spec/feature-name.md
-└── plan/feature-name-implementation.md
+docs/issues/{num}-{short-name}/
+├── README.md   # Status, GH link, quick reference
+├── plan.md     # Implementation approach
+└── notes.md    # Working notes (starts empty)
 ```
 
 **Process**:
-1. Read `references/templates/prd.md` → Generate PRD (FIRST)
-2. Read `references/templates/adr.md` → Generate ADR
-3. Read `references/templates/design.md` → Generate Design
-4. Read `references/templates/spec.md` → Generate Spec
-5. Read `references/templates/plan.md` → Generate Plan
-6. Read `references/patterns.md` → Add cross-references
-7. Return summary with file paths
+1. Create folder `docs/issues/{num}-{short-name}/`
+2. Generate README.md with issue link and status
+3. Generate plan.md with implementation approach
+4. Create empty notes.md for working notes
+5. Return file paths
 
-### Mode 2: Product Context (PRD Only)
+**README.md template**:
+```markdown
+# Issue #{num}: {Title}
 
-**Trigger**: "Create PRD for [feature]", "Write product requirements for [feature]"
+**GitHub**: {link}
+**Status**: In Progress
+**Created**: {date}
 
-**Generates**:
-```
-docs/prd/feature-name.md
-```
+## Overview
+{Brief description from issue}
 
-**Process**:
-1. Read `references/templates/prd.md`
-2. Generate PRD with product intent from request
-3. Suggest: "Ready to create engineering context? Ask for ADR/Design/Spec/Plan"
-
-### Mode 3: Decision Only (ADR)
-
-**Trigger**: "Create ADR for [decision]", "Document decision about [choice]"
-
-**Generates**:
-```
-docs/adr/NNN-decision-name.md
+## Related
+- Plan: [plan.md](./plan.md)
+- Notes: [notes.md](./notes.md)
 ```
 
-**Process**:
-1. Find next ADR number (glob `docs/adr/*.md`)
-2. Read `references/templates/adr.md`
-3. Generate ADR with context from request
-4. Link to related existing docs (PRD, Design, etc.) if applicable
+**plan.md template**:
+```markdown
+# Implementation Plan: {Title}
 
-### Mode 4: Implementation Setup (Plan + Spec)
+## Approach
+{High-level approach}
 
-**Trigger**: "Set up implementation for [work]", "Create plan for [feature]"
+## Tasks
+- [ ] {Task 1}
+- [ ] {Task 2}
+- [ ] {Task 3}
 
-**Generates**:
+## Files to Modify
+- {file 1}
+- {file 2}
+
+## Notes
+{Implementation notes as work progresses}
 ```
-docs/
-├── spec/feature-name.md
-└── plan/feature-name-implementation.md
+
+---
+
+### Mode 2: Architecture Decision Record (ADR)
+
+**Trigger**: "Create ADR for choosing X over Y", "Document the decision about Z"
+
+**Creates**:
 ```
-
-**Process**:
-1. Read `references/templates/spec.md` → Generate Spec
-2. Read `references/templates/plan.md` → Generate Plan
-3. Cross-reference between them
-4. Link to existing PRD/ADR/Design if found
-
-### Mode 5: Devlog (Capture Learning)
-
-**Trigger**: "Write devlog for [work]", "Document lessons from [experience]"
-
-**Generates**:
-```
-docs/devlog/YYYY-MM-DD-topic-slug.md
+docs/adr/{NNN}-{decision-name}.md
 ```
 
 **Process**:
-1. Read `references/templates/devlog.md`
-2. Generate devlog with narrative structure
-3. Link to related PRD/ADR/Design/Plan/Spec
+1. Find next ADR number (glob `docs/adr/*.md`, or start at 001)
+2. Create `docs/adr/` directory if needed
+3. Generate ADR from template in `references/templates/adr.md`
+4. Return file path
+
+**When to use ADRs**:
+- Major architectural decisions (database choice, framework selection)
+- Decisions that will be questioned later ("why did we do it this way?")
+- Decisions with significant tradeoffs worth documenting
+- NOT for routine implementation choices
+
+**Note**: Most decisions don't need formal ADRs. They get captured in devlogs and synthesized into `docs/moc/decisions.md` during periodic maintenance. Use ADRs sparingly for decisions that truly warrant formal documentation.
+
+---
+
+## What This Skill Does NOT Do
+
+This lean version intentionally omits:
+
+| Old Feature | Why Removed | Alternative |
+|-------------|-------------|-------------|
+| PRD generation | GitHub issue IS the PRD | Write clear issues |
+| Design docs per feature | Only major systems need design docs | `docs/design/` for systems |
+| Spec docs | Plan IS the spec | Use plan.md |
+| Cross-reference ceremony | Overkill for most work | Keep it simple |
+
+---
 
 ## Quick Reference
 
-| Request | Mode | Templates |
-|---------|------|-----------|
-| "Set up context for X" | Full | All 5 templates (PRD first) |
-| "Create PRD for X" | Product | `prd.md` |
-| "Create ADR for X" | Decision | `adr.md` |
-| "Create plan for X" | Implementation | `spec.md`, `plan.md` |
-| "Write devlog for X" | Capture | `devlog.md` |
-| "Update design for X" | Update | `design.md` (edit existing) |
+| Request | Mode | Output |
+|---------|------|--------|
+| "Set up context for issue #115" | Issue | `docs/issues/115-*/` |
+| "Create working space for auth" | Issue | `docs/issues/{num}-auth/` |
+| "Create ADR for X vs Y decision" | ADR | `docs/adr/NNN-*.md` |
+| "Document decision about caching" | ADR | `docs/adr/NNN-*.md` |
 
-## Cross-Reference Pattern
+---
 
-Every generated doc includes a **Related Documents** section:
+## Lifecycle
 
-```markdown
-**Related Documents**:
-- **Product**: [PRD](../prd/feature.md)
-- **Why**: [ADR-NNN](../adr/NNN-feature.md)
-- **How**: [Design](../design/feature.md)
-- **What**: [Spec](../spec/feature.md)
-- **Steps**: [Plan](../plan/feature-implementation.md)
-```
+### Issue Working Space
+1. **Create** when starting multi-session work
+2. **Update** plan.md and notes.md as you work
+3. **Extract** patterns to `ai_docs/` if reusable
+4. **Delete** folder when issue closes
 
-This creates a **navigation graph** for agents.
+### ADRs
+1. **Create** for major decisions
+2. **Never edit** once accepted (write new ADR if decision changes)
+3. **Reference** from `docs/moc/decisions.md` for discoverability
 
-## Token Optimization
-
-Instead of one 1000+ line doc, generate focused docs:
-- PRD: ~200-400 lines (product intent)
-- ADR: ~200-300 lines (decision context)
-- Design: ~300-600 lines (architecture)
-- Spec: ~300-500 lines (requirements)
-- Plan: ~200-400 lines (tasks)
-
-Agent reads only what it needs → 50-80% token reduction.
+---
 
 ## Part of the dev-* Family
 
 | Skill | Purpose |
 |-------|---------|
-| `dev-inquiry` | Thinking through technical choices |
-| `dev-context` | Aligning context for work |
-| `dev-reports` | Communicating work progress |
+| `dev-context` | Set up working space, create ADRs |
+| `dev-explore` | Generate/update MOC documentation |
+| `dev-reports` | Write devlogs and status reports |
+| `dev-inquiry` | Technical investigation and spikes |
 
-## Templates
+---
 
-See `references/templates/` for each doc type:
-- `prd.md` - Product Requirements Document
-- `adr.md` - Architecture Decision Record
-- `design.md` - Living Design Document
-- `spec.md` - Requirements Specification
-- `plan.md` - Implementation Plan
-- `devlog.md` - Development Log
+## See Also
 
-See `references/patterns.md` for cross-referencing and naming conventions.
+- `docs/issues/README.md` - Working space conventions
+- `ai_docs/maintenance-workflows.md` - When to extract patterns
+- `docs/moc/decisions.md` - Synthesized decision history
