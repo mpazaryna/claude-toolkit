@@ -39,6 +39,13 @@ This is a Claude Code plugin repository containing specialized agents, commands,
 - **generated-skills/** - Output directory for generated Claude Skills
 - **generated-agents/** - Output directory for generated Claude Agents (includes quality-control-enforcer, research-docs-fetcher, work-completion-summarizer, etc.)
 
+- **curated-prompts/** - Collected and original prompts organized by domain
+  - **art/** - Art and creative prompts
+  - **ios-development/** - iOS and Swift development prompts
+  - **pkm/** - Personal knowledge management prompts
+  - **writing/** - Writing style, editing, and anti-slop prompts
+  - **yoga/** - Yoga teaching and class planning prompts
+
 - **commands/** - Top-level commands directory with additional slash commands
 - **plugins/** - Example Claude Code plugins for reference
 - **docs/** - Additional documentation and reports
@@ -67,11 +74,22 @@ Templates in `.claude/templates/` offer comprehensive analysis structures for di
 ### Skills
 Pre-built skills in `.claude/skills/` provide ready-to-use functionality that can be installed in any project, including journal generation and repository documentation.
 
+### Curated Prompts
+Collected and original prompts in `curated-prompts/`, organized by domain. Each prompt is a standalone markdown file with YAML frontmatter:
+- `name`: Prompt identifier
+- `description`: What the prompt does
+- `source`: URL where it was found, or `original` for self-authored
+- `collected`: Date added
+- `tags`: Cross-domain discoverability tags
+
+Unlike skills (deep knowledge + behavior) or agents (workflow + persona), curated prompts are portable, copy-pasteable instructions usable with any LLM.
+
 ## Usage Patterns
 
 1. **Agent Invocation**: Agents are referenced by their name and provide specialized analysis or validation
 2. **Command Execution**: Commands guide systematic exploration and documentation of codebases
 3. **Template Application**: Templates structure comprehensive codebase analysis for different project types
+4. **Prompt Usage**: Curated prompts are grabbed from `curated-prompts/` and used directly with any LLM
 
 ## Architecture Notes
 
@@ -79,6 +97,7 @@ This repository serves as a Claude Code plugin providing a configuration and tem
 - Agent behaviors and review criteria
 - Command sequences for codebase analysis
 - Templates for documenting different types of projects
+- Curated prompts for direct use with any LLM
 
 The plugin is designed to enhance Claude Code's ability to understand, analyze, and document various codebases through structured approaches and specialized agent roles. It can be installed across multiple projects via the Claude Code plugin system, providing consistent tooling and workflows.
 
